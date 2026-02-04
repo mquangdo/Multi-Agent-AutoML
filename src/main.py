@@ -17,7 +17,6 @@ sys.path.insert(0, current_dir)
 
 ##Opik Tracer setup
 project_name = 'AutoML-Agent'
-tracer = OpikTracer(project_name=project_name)
 
 def run_automl_pipeline(user_input: str):
     """
@@ -37,6 +36,8 @@ def run_automl_pipeline(user_input: str):
         initial_state = {"user_input": user_input}
 
         # Run the manager app
+        tracer = OpikTracer(graph=manager_app.get_graph(xray=True), project_name=project_name) 
+
         result = manager_app.invoke(initial_state, config={"callbacks": [tracer]})
 
         # Print final output
