@@ -113,3 +113,6 @@ automl-agent/
 ├── README.md            # This file
 └── EXAMPLE_USAGE.md     # Detailed usage instructions
 ```
+
+## Tracing with Opik
+The workflow is traced using Opik. You can use LangSmith, LangFuse or anything you want.
